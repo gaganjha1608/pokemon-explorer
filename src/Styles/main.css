@@ -1,0 +1,142 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #3b4cca;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ffcb05, #3b4cca);
+  color: orangered;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+  background-color: #3ccfcc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 0 0 12px 12px;
+}
+
+.search-bar input, .type-filter select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  min-width: 200px;
+  transition: box-shadow 0.2s ease;
+}
+
+.search-bar input:focus, .type-filter select:focus {
+  box-shadow: 0 0 5px rgba(59,76,202,0.5);
+  border-color: #303b90;
+}
+
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.pokemon-card {
+  background: rgb(91, 208, 151);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.pokemon-card img {
+  width: 120px;
+  height: 120px;
+}
+
+.type {
+  display: inline-block;
+  margin: 5px 3px 0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.loading, .error, .empty {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 40px;
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Dark Mode Styles */
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --card-bg: #fff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --bg-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --card-bg: #2e2e2e;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pokemon-card {
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+
+.theme-toggle {
+  margin-left: auto;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 2px 4px var(--card-shadow);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 0.9;
+}
